@@ -1,6 +1,6 @@
 "use strict";
 
-var md = require('markdown-it')();
+var md = require('markdown-it');
 var markdownItAttrs = require('markdown-it-attrs');
 var loaderUtils = require("loader-utils");
 var assign = require("object-assign");
@@ -40,7 +40,8 @@ module.exports = function(src) {
   var options = assign({}, options, query, this.options[configKey]);
 
   this.cacheable();
-  md.use(markdownItAttrs, options);
+  md(options);
+  md.use(markdownItAttrs);
 
   return md.render(src);
 };
