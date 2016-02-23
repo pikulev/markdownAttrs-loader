@@ -3,13 +3,14 @@ markdownattrs-loader
 
 markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it).
 
-[![npm status](https://nodei.co/npm/markdownattrs-loader.svg?downloads=true&stars=true)](https://www.npmjs.com/package/markdownattrs-loader)
-
 ## Setup
 
 ```bash
 npm install markdownattrs-loader
 ```
+
+[![npm status](https://nodei.co/npm/markdownattrs-loader.svg?downloads=true&stars=true)](https://www.npmjs.com/package/markdownattrs-loader)
+
 
 ## Usage 
 
