@@ -32,6 +32,6 @@
     "markdown-it": "^6.0.0",
     "markdown-it-attrs": "^0.1.8",
     "loader-utils": "^0.2.7",
-    "object-assign": "^2.0.0"
+    "object-assign": "^4.0.1"
   }
 }
