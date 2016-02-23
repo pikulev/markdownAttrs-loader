@@ -1,0 +1,37 @@
+{
+  "name": "markdownAttrs-loader",
+  "version": "0.1.0",
+  "description": "markdownAttrs-loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pikulev/markdownAttrs-loader"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "markdown",
+    "markdown-it",
+    "markdown-it-attrs",
+    "identifier",
+    "id",
+    "class",
+    "attribute",
+    "html"
+  ],
+  "author": "pikulev <vasily@127.team>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pikulev/markdownAttrs-loader/issues"
+  },
+  "homepage": "https://github.com/pikulev/markdownAttrs-loader",
+  "dependencies": {
+    "markdown-it": "^6.0.0",
+    "markdown-it-attrs": "^0.1.8",
+    "loader-utils": "^0.2.7",
+    "object-assign": "^2.0.0"
+  }
+}
