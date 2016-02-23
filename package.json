@@ -12,7 +12,7 @@
   },
   "keywords": [
     "webpack",
-    "plugin",
+    "loader",
     "markdown",
     "markdown-it",
     "markdown-it-attrs",
