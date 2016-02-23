@@ -40,8 +40,7 @@ module.exports = function(src) {
   var options = assign({}, options, query, this.options[configKey]);
 
   this.cacheable();
-  md(options);
-  md.use(markdownItAttrs);
+  var configuredMd = md(options).use(markdownItAttrs);
 
-  return md.render(src);
+  return configuredMd.render(src);
 };
