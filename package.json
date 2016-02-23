@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/pikulev/markdownattrs-loader/issues"
   },
-  "homepage": "https://github.com/pikulev/markdownAttrs-loader",
+  "homepage": "https://github.com/pikulev/markdownattrs-loader",
   "dependencies": {
     "markdown-it": "^6.0.0",
     "markdown-it-attrs": "^0.1.8",
