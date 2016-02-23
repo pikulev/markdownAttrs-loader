@@ -1,19 +1,19 @@
-markdownAttrs-loader
+markdownattrs-loader
 ===============
 
-markdownAttrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it).
+markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it).
 
 
 ## Setup
 
 ```bash
-npm install markdownAttrs-loader
+npm install markdownattrs-loader
 ```
 
 ## Usage 
 
 ```javascript
-var html = require("html!markdownAttrs!./file.md");
+var html = require("html!markdownattrs!./file.md");
 ```
 
 ### Recommended Configuration
@@ -24,7 +24,7 @@ Since marked's output is HTML, it's best served in conjunction with the [html-lo
 {
     module: {
         loaders: [
-            { test: /\.md$/, loader: "html!markdownAttrs" },
+            { test: /\.md$/, loader: "html!markdownattrs" },
         ]
     }
 }
@@ -39,7 +39,7 @@ Since marked's output is HTML, it's best served in conjunction with the [html-lo
 {
     module: {
         loaders: {
-            { test: /\.md$/, loader: "html!markdownAttrs?html=true" },
+            { test: /\.md$/, loader: "html!markdownattrs?html=true" },
         ]
     }
 }
@@ -47,8 +47,8 @@ Since marked's output is HTML, it's best served in conjunction with the [html-lo
 
 ### Custom config
 
-Simply set the `markdownAttrsLoader`-option on your webpack options. You can also change the options' key
-with a query parameter: `"markdownAttrs?config=markdownAttrsLoaderCustomConfig"`.
+Simply set the `markdownattrsLoader`-option on your webpack options. You can also change the options' key
+with a query parameter: `"markdownattrs?config=markdownattrsLoaderCustomConfig"`.
 
 
 ```javascript
@@ -56,7 +56,7 @@ with a query parameter: `"markdownAttrs?config=markdownAttrsLoaderCustomConfig"`
 
 module.exports = {
     ...
-    markdownAttrsLoaderCustomConfig: {
+    markdownattrsLoaderCustomConfig: {
         html: true,
         ...
     }

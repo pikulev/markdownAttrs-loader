@@ -36,7 +36,7 @@ var options = {
 module.exports = function(src) {
 
   var query = loaderUtils.parseQuery(this.query);
-  var configKey = query.config || "markdownAttrsLoader";
+  var configKey = query.config || "markdownattrsLoader";
   var options = assign({}, options, query, this.options[configKey]);
 
   this.cacheable();
