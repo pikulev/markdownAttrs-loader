@@ -140,4 +140,5 @@ module.exports = {
 
 ## License
 
-MIT (http://www.opensource.org/licenses/mit-license.php)
+Copyright (c) 2016 Vasily Pikulev.
+This is free software, and may be redistributed under the terms specified in the LICENSE file
