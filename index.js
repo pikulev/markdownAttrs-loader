@@ -29,7 +29,7 @@ function getPluginsFromQuery(query) {
 
   if (query) {
     try {
-      query.split(',').forEach(function(str) {
+      query.replace(/^\[|\]$/g,'').split(',').forEach(function(str) {
         pluginsFromQuery.push(require(str));
       });
     } catch (e) {
