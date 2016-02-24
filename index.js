@@ -5,42 +5,42 @@ var markdownItAttrs = require('markdown-it-attrs');
 var loaderUtils = require("loader-utils");
 var assign = require("object-assign");
 
-// full options list (markdown-it defaults)
-var options = {
-  html: false,        // Enable HTML tags in source
-  xhtmlOut: false,        // Use '/' to close single tags (<br />).
-                          // This is only for full CommonMark compatibility.
-  breaks: false,        // Convert '\n' in paragraphs into <br>
-  langPrefix: 'language-',  // CSS language prefix for fenced blocks. Can be
-                            // useful for external highlighters.
-  linkify: false,        // Autoconvert URL-like text to links
+var presetUse = markdownItAttrs;
+var defaultOptions = {};
 
-  // Enable some language-neutral replacement + quotes beautification
-  typographer: false,
+function mergePlugins(array1, array2) {
+  var array = array1.concat(array2);
+  array.push(presetUse);
 
-  // Double + single quotes replacement pairs, when typographer enabled,
-  // and smartquotes on. Could be either a String or an Array.
-  //
-  // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-  // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-  quotes: '“”‘’',
-
-  // Highlighter function. Should return escaped HTML,
-  // or '' if the source string is not changed and should be escaped externaly.
-  // If result starts with <pre... internal wrapper is skipped.
-  highlight: function(/*str, lang*/) {
-    return '';
+  for (var i = 0; i < array.length; ++i) {
+    for (var j = i + 1; j < array.length; ++j) {
+      if (array[i] === array[j])
+        array.splice(j--, 1);
+    }
   }
-};
+
+  return array;
+}
 
 module.exports = function(src) {
+  this.cacheable();
 
   var query = loaderUtils.parseQuery(this.query);
   var configKey = query.config || "markdownattrsLoader";
-  var options = assign({}, options, query, this.options[configKey]);
+  var options = Object.create(this.options[configKey]);
 
-  this.cacheable();
-  var configuredMd = md(options).use(markdownItAttrs);
+  var plugins = mergePlugins(options.use || [], query.use || []);
+  delete query.use;
+  delete options.use;
+
+  options = assign({}, defaultOptions, query, options);
+
+  var configuredMd = md(options);
+  if (plugins) {
+    plugins.forEach(function(plugin) {
+      configuredMd.use(plugin);
+    });
+  }
 
   return configuredMd.render(src);
 };
