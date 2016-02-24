@@ -107,7 +107,7 @@ module.exports = {
 
 ### Using markdown-it plugins
 
-Query parameter:
+via query parameter:
 
 ```javascript
 {
@@ -119,7 +119,7 @@ Query parameter:
 }
 ```
 
-`markdownattrsLoader`-option
+or `markdownattrsLoader`-option:
 
 ```javascript
 // webpack.config.js
