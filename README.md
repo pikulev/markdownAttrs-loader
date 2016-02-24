@@ -68,10 +68,12 @@ module.exports = {
 
 ### Options List
 
-[markdown-it](https://github.com/markdown-it/markdown-it) defaults:
 
 ```javascript
 {
+  //markdown-it defaults:
+  //------------------------------------------------
+  
   html:         false,        // Enable HTML tags in source
   xhtmlOut:     false,        // Use '/' to close single tags (<br />).
                               // This is only for full CommonMark compatibility.
@@ -94,7 +96,44 @@ module.exports = {
   // or '' if the source string is not changed and should be escaped externaly.
   // If result starts with <pre... internal wrapper is skipped.
   highlight: function (/*str, lang*/) { return ''; }
+  
+  //markdownattrs-loader feature:
+  //------------------------------------------------
+  //You can set 'use' parameter to set markdown-it plugins
+  
+  use: []
 }
+```
+
+### Using markdown-it plugins
+
+Query parameter:
+
+```javascript
+{
+    module: {
+        loaders: {
+            { test: /\.md$/, loader: "html!markdownattrs?use[]=markdown-it-sup,use[]=markdown-it-sub" },
+        ]
+    }
+}
+```
+
+`markdownattrsLoader`-option
+
+```javascript
+// webpack.config.js
+
+var markdownSup = require('markdown-it-sup');
+var markdownSub = require('markdown-it-sub');
+
+module.exports = {
+    ...
+    markdownattrsLoader: {
+        use: [markdownSup, markdownSub], // Always an array
+        ...
+    }
+};
 ```
 
 ## License
