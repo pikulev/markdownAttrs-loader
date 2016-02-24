@@ -8,6 +8,7 @@ var assign = require("object-assign");
 var presetUse = markdownItAttrs;
 var defaultOptions = {};
 
+
 function mergePlugins(array1, array2) {
   var array = array1.concat(array2);
   array.push(presetUse);
@@ -22,12 +23,33 @@ function mergePlugins(array1, array2) {
   return array;
 }
 
+
+function getPluginsFromQuery(query) {
+  var pluginsFromQuery = [];
+
+  if (query) {
+    try {
+      query.split(',').forEach(function(str) {
+        pluginsFromQuery.push(require(str));
+      });
+    } catch (e) {
+      console.error(e, "markdownattrs-loader: Wrong query string", query);
+      return [];
+    }
+  }
+
+  return pluginsFromQuery;
+}
+
+
 module.exports = function(src) {
   this.cacheable();
 
   var query = loaderUtils.parseQuery(this.query);
   var configKey = query.config || "markdownattrsLoader";
   var options = Object.create(this.options[configKey]);
+
+  query.use = getPluginsFromQuery(query.use);
 
   var plugins = mergePlugins(options.use || [], query.use || []);
   delete query.use;
