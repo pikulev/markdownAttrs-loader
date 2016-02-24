@@ -1,7 +1,7 @@
 markdownattrs-loader
 ===============
 
-markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it).
+markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it) that allows you to set classes, identifiers and attributes to your markdown.
 
 ## Setup
 
