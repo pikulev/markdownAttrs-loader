@@ -56,7 +56,7 @@ module.exports = function(src) {
 
   options = assign({}, defaultOptions, query, options);
 
-  var configuredMd = md(options);
+  var configuredMd = md('full', options);
   if (plugins) {
     plugins.forEach(function(plugin) {
       configuredMd.use(plugin);
