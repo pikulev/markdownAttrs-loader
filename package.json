@@ -1,6 +1,6 @@
 {
   "name": "markdownattrs-loader",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "markdownattrs-loader for webpack",
   "main": "index.js",
   "scripts": {
