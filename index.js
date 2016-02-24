@@ -48,15 +48,15 @@ module.exports = function(src) {
   var configKey = query.config || "markdownattrsLoader";
   delete query.config;
 
-  var options = Object.create(this.options[configKey] || null);
+  var options = assign({}, defaultOptions, this.options[configKey]);
 
   var plugins = mergePlugins(options.use || [], getPluginsFromQuery(query.use));
   delete query.use;
   delete options.use;
 
-  options = assign({}, defaultOptions, query, options);
+  options = assign({}, query, options);
 
-  var configuredMd = md('default', options);
+  var configuredMd = md(options);
   if (plugins) {
     plugins.forEach(function(plugin) {
       configuredMd.use(plugin);
