@@ -141,4 +141,5 @@ module.exports = {
 ## License
 
 Copyright (c) 2016 Vasily Pikulev.
+
 This is free software, and may be redistributed under the terms specified in the LICENSE file
