@@ -5,12 +5,11 @@ markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/ar
 
 ## Setup
 
+[![NPM](https://nodei.co/npm/markdownattrs-loader.png)](https://nodei.co/npm/markdownattrs-loader/)
+
 ```bash
 npm install markdownattrs-loader
 ```
-
-[![npm status](https://nodei.co/npm/markdownattrs-loader.svg?downloads=true&stars=true)](https://www.npmjs.com/package/markdownattrs-loader)
-
 
 ## Usage 
 
