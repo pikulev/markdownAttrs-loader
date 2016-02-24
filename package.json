@@ -4,7 +4,7 @@
   "description": "markdownattrs-loader for webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/nodeunit test/loader.js"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,11 @@
     "markdown-it-attrs": "^0.1.8",
     "loader-utils": "^0.2.7",
     "object-assign": "^4.0.1"
+  },
+  "devDependencies": {
+    "cheerio": "^0.20.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "nodeunit": "^0.9.1"
   }
 }
