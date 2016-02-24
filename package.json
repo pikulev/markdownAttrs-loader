@@ -4,7 +4,7 @@
   "description": "markdownattrs-loader for webpack",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nodeunit test/loader.js"
+    "test": "./node_modules/.bin/nodeunit test/unit.js"
   },
   "repository": {
     "type": "git",
