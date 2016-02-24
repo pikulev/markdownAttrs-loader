@@ -28,14 +28,13 @@ function getPluginsFromQuery(query) {
   var pluginsFromQuery = [];
 
   if (query) {
-    try {
-      query.replace(/^\[|\]$/g,'').split(',').forEach(function(str) {
+    query.forEach(function(str) {
+      try {
         pluginsFromQuery.push(require(str));
-      });
-    } catch (e) {
-      console.error(e, "markdownattrs-loader: Wrong query string", query);
-      return [];
-    }
+      } catch (e) {
+        console.error(e);
+      }
+    });
   }
 
   return pluginsFromQuery;
@@ -49,9 +48,7 @@ module.exports = function(src) {
   var configKey = query.config || "markdownattrsLoader";
   var options = Object.create(this.options[configKey]);
 
-  query.use = getPluginsFromQuery(query.use);
-
-  var plugins = mergePlugins(options.use || [], query.use || []);
+  var plugins = mergePlugins(options.use || [], getPluginsFromQuery(query.use));
   delete query.use;
   delete options.use;
 
