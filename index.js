@@ -46,7 +46,7 @@ module.exports = function(src) {
 
   var query = loaderUtils.parseQuery(this.query);
   var configKey = query.config || "markdownattrsLoader";
-  var options = Object.create(this.options[configKey]);
+  var options = Object.create(this.options[configKey] || null);
 
   var plugins = mergePlugins(options.use || [], getPluginsFromQuery(query.use));
   delete query.use;
