@@ -130,7 +130,7 @@ var markdownSub = require('markdown-it-sub');
 module.exports = {
     ...
     markdownattrsLoader: {
-        use: [markdownSup, markdownSub], // Always an array
+        use: [markdownSup, markdownSub], // It's always an array
         ...
     }
 };
