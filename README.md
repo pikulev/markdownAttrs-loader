@@ -3,6 +3,8 @@ markdownattrs-loader
 
 markdownattrs-loader for webpack using [markdown-it-attrs](https://github.com/arve0/markdown-it-attrs) based on [markdown-it](https://github.com/markdown-it/markdown-it) that allows you to set classes, identifiers and attributes to your markdown.
 
+Add classes, identifiers and attributes to your markdown with `{.class #identifier attr=value attr2="spaced value"}` curly brackets, similar to [pandoc's header attributes](http://pandoc.org/README.html#extension-header_attributes).
+
 ## Setup
 
 [![NPM](https://nodei.co/npm/markdownattrs-loader.png)](https://nodei.co/npm/markdownattrs-loader/)
